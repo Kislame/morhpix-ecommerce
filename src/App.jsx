@@ -2,7 +2,7 @@
 import React from 'react';
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   createRoutesFromElements,
   Route,
@@ -18,9 +18,13 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import AdminBoard from './pages/AdminBoard';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route
+      basename="/templates/morhpix-ecommerce/dist"
+      path="/"
+      element={<Layout />}
+    >
       <Route index element={<Home />} />
       <Route path="cart" element={<Cart />} />
       <Route path="register" element={<Register />} />
